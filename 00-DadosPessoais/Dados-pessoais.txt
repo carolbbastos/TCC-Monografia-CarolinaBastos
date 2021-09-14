@@ -1,16 +1,16 @@
 
-Nome Completo: 		
-Data nascimento: 	
-CPF: 			
-Telefone Casa: 
-Celular: 
-E-mail_1: 
-E-mail_2: 
-Endereço:	
-Rua: 		
-Bairro:			
-Cidade:		
-CEP:		
+Nome Completo: Carolina Silva Bastos 		
+Data nascimento: 14/03/1997	
+CPF: 118.679.646-43			
+Telefone Casa: (31)3892-2324 
+Celular: (31)99579-1064
+E-mail_1: carolinabastos.uenf@gmail.com
+E-mail_2: carolinabastos@lenep.uenf.br
+Endereço: 
+Rua: Rua Oséas Rodrigues Santa Rita 		
+Bairro: São Marcos			
+Cidade:	Macaé	
+CEP: 27930-805		
  
 Meu lattes já está preenchido e atualizado. O link para ele é: 
  

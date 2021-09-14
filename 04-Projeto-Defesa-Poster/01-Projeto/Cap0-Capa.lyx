@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abnt
 \begin_preamble
 \usepackage {graphicx}
@@ -23,16 +25,18 @@
 \language_package default
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -75,6 +79,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -89,7 +94,10 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -139,10 +147,10 @@ thispagestyle{empty}
 \align center
 
 \size large
-TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃ
-O / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE
+SIMULAÇÃO DO ESCOAMENTO MONOFÁSICO DE FLUIDOS COMPRESSÍVEIS, COM EFEITOS
+ NÃO-DARCYANOS, EM TESTES DE PRESSÃO EM RESERVATÓRIOS DE GÁS
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 O título deve ser o mais claro possível, não deixando dúvidas sobre o assunto
@@ -166,7 +174,7 @@ O título deve ser o mais claro possível, não deixando dúvidas sobre o assunt
 \align center
 
 \size large
-NOME COMPLETO DO AUTOR(A)
+CAROLINA SILVA BASTOS
 \begin_inset Newline newline
 \end_inset
 
@@ -206,11 +214,15 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-MARÇO - 2015
+AGOSTO - 2021
 \end_layout
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -249,6 +261,10 @@ thispagestyle{empty}
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
@@ -291,8 +307,8 @@ thispagestyle{empty}
 \align center
 
 \size large
-TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃ
-O / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE
+SIMULAÇÃO DO ESCOAMENTO MONOFÁSICO DE FLUIDOS COMPRESSÍVEIS, COM EFEITOS
+ NÃO-DARCYANOS, EM TESTES DE PRESSÃO EM RESERVATÓRIOS DE GÁS
 \end_layout
 
 \begin_layout Standard
@@ -304,9 +320,7 @@ O / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE
 
 \begin_layout Standard
 \align center
-
-\size large
-NOME COMPLETO DO AUTOR(A)
+CAROLINA SILVA BASTOS
 \end_layout
 
 \begin_layout Standard
@@ -329,31 +343,20 @@ width "50text%"
 special "none"
 height "1in"
 height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
 \align block
-Monografia/Dissertação/Tese apresentada ao Centro de Ciências e Tecnologia
- da Universidade Estadual do Norte Fluminense, como parte das exigências
- para obtenção do título de Mestre/Doutor em Engenharia de Reservatório
- e de Exploração.
+Monografia apresentada ao Centro de Ciências e Tecnologia da Universidade
+ Estadual do Norte Fluminense, como parte das exigências para obtenção do
+ título de Engenheiro de Exploração e Produção de Petróleo.
 \begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-manter esta linha apenas nas dissertações/teses
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align block
-título de Engenheiro de Exploração e Produção de Petróleo.
-\begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 manter esta linha apenas nas monografias
@@ -379,7 +382,7 @@ manter esta linha apenas nas monografias
 \begin_layout Standard
 \align center
 Orientador: Prof.
- Fulano de Tal, D.Sc.
+ Carlos Enrique Pico Ortiz, D.Sc.
 \end_layout
 
 \begin_layout Standard
@@ -397,7 +400,7 @@ MACAÉ - RJ
 \begin_inset Newline newline
 \end_inset
 
-MARÇO - 2015
+AGOSTO - 2021
 \end_layout
 
 \begin_layout Standard
@@ -447,8 +450,8 @@ pagenumbering{roman}
 \align center
 
 \size large
-TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃ
-O / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE
+SIMULAÇÃO DO ESCOAMENTO MONOFÁSICO DE FLUIDOS COMPRESSÍVEIS, COM EFEITOS
+ NÃO-DARCYANOS, EM TESTES DE PRESSÃO EM RESERVATÓRIOS DE GÁS
 \end_layout
 
 \begin_layout Standard
@@ -462,7 +465,7 @@ O / TESE; TÍTULO DA DISSERTAÇÃO / TESE; TÍTULO DA DISSERTAÇÃO / TESE
 \align center
 
 \size large
-NOME COMPLETO DO AUTOR(A)
+CAROLINA SILVA BASTOS
 \size default
 
 \begin_inset VSpace 2.5cm
@@ -484,31 +487,20 @@ width "50text%"
 special "none"
 height "1in"
 height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
 status open
 
 \begin_layout Plain Layout
 \align block
-Monografia/Dissertação/Tese apresentada ao Centro de Ciências e Tecnologia
- da Universidade Estadual do Norte Fluminense, como parte das exigências
- para obtenção do título de Mestre/Doutor em Engenharia de Reservatório
- e de Exploração.
+Monografia apresentada ao Centro de Ciências e Tecnologia da Universidade
+ Estadual do Norte Fluminense, como parte das exigências para obtenção do
+ título de Engenheiro de Exploração e Produção de Petróleo.
 \begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-manter esta linha apenas nas dissertações/teses
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align block
-título de Engenheiro de Exploração e Produção de Petróleo.
-\begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 manter esta linha apenas nas monografias
@@ -820,6 +812,10 @@ Público a que se dirige, trabalhos já realizados.
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -938,6 +934,10 @@ Aos professores e funcionários do LENEP/CCT/UENF....
 
 \begin_layout Standard
 Ao CENPES/PETROBRAS pelo fornecimento de material....
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -985,11 +985,16 @@ Troque o genérico "aos amigos" pelo nome completo dos seus amigos e nome
 \begin_layout Standard
 \paragraph_spacing double
 \begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\paragraph_spacing double
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
 \paragraph_spacing double
-(obrigatório para bolsistas prh20-anp/ctpetro) - 
+(obrigatório para bolsistas prh20-anp/ctpetro) -
 \end_layout
 
 \end_inset
@@ -1001,12 +1006,12 @@ nto de bolsa de estudos e taxa de bancada por meio do Programa de Recursos
  Humanos da ANP para o Setor Petróleo e Gás – PRH-ANP/MCT.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-(obrigatório para bolsistas prh20-anp/petrobras) - 
+(obrigatório para bolsistas prh20-anp/petrobras) -
 \end_layout
 
 \end_inset
@@ -1015,6 +1020,11 @@ Ao comitê gestor do PRH20-ANP-PETROBRAS/LENEP/CCT/UENF, e a Universidade
  Petrobras pelo fornecimento de bolsa de estudos e taxa de bancada por meio
  do PFRH-PETROBRAS, Programa de Formação de Recursos Humanos da Petrobras.
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
