@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abnt
 \begin_preamble
 \usepackage {graphicx}
@@ -19,47 +21,31 @@
 \renewcommand {\familydefault}{\sfdefault}
 %\usepackage[abnt-etal-text=emph,......]{abntcite} ou \usepackage[abnt-etal-text=it,......]{abntcite} 
 
-
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
 % Informa que vai usar o pacote listings, 
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
-
-% Define um novo comando, chamado lst
-% observe que lst chama o comando  lstinputlisting.
-\newcommand{\lst}[2]{%
-    \noindent\rule[-1ex]{\textwidth}{0.3mm}\vspace{-1ex}
-    \lstinputlisting[caption={#2},label={#1},stringspaces=false,frame={tb},lineskip=-1pt,extendedchars=true,%
-    basicstyle=\footnotesize\tt,labelstep=1,labelstyle=\tiny,indent=2em,language=Java,breaklines]{#1}
-    \vspace{1ex}%
-}
-% \listfiles
-% \usepackage[]{hyperref}
-% \usepackage{mathptmx}  % instead of package times
-%\ usepackage[scaled=0.9]{helvet} % or [scaled=0.92], if you like
-%% Pacote de citações para formato abnt
-%% \usepackage[num]{abntcite}
-%% \usepackage[alf]{abntcite}
-%% FIM  Lyx-Document Settings
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
 \end_preamble
-\options normaltoc, sumarioincompleto
+\options normaltoc, sumariocompleto
 \use_default_options false
 \maintain_unincluded_children false
 \language brazilian
-\language_package default
+\language_package babel
 \inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -95,13 +81,14 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -116,7 +103,10 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -132,10 +122,57 @@
 \begin_layout Standard
 \align block
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Não se atenha ao modelo; leia o tutorial do LyX que é em português!
+Não se atenha ao modelo; leia o tutorial do \SpecialChar LyX
+ que é em português!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Nota importante:
+\end_layout
+
+\begin_layout Plain Layout
+—-> Este modelo usa o abntex1 <—-
+\end_layout
+
+\begin_layout Plain Layout
+No final de 2016 saiu a versão abntex2 que é a que esta vindo em várias
+ distribuições do GNU/Linux e versões mais recentes do miktex.
+ Isto pode causar incompatibilidades....
+\end_layout
+
+\begin_layout Plain Layout
+Como este modelo ainda usa abntex1 é possível que apareçam mensagens de
+ erro, normalmente a reclamação da falta de algum arquivo do tex/latex caso
+ abntex1 não tenha sido instalado.
+\end_layout
+
+\begin_layout Plain Layout
+Caso isto ocorra, anote num papel o nome do arquivo que esta pedindo.
+\end_layout
+
+\begin_layout Plain Layout
+Verifique se o arquivo esta localizado dentro do diretório abntex-08 (normalment
+e na pasta texmf).
+ Caso afirmativo, copie o arquivo para o diretório onde esta o arquivo mestre(es
+te que você lê).
+ Repita este procedimento para todos os arquivos solicitados.
+\end_layout
+
+\begin_layout Plain Layout
+Muito provavelmente vai funcionar!
 \end_layout
 
 \end_inset
@@ -228,7 +265,7 @@ rhead{}
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Ler todas as notas!
@@ -254,11 +291,14 @@ Existem duas maneiras de gerar a nomenclatura:
 \end_layout
 
 \begin_layout Plain Layout
-2) - A partir do LyX 2.0 existe a opção de inserir lista de nomenclatura(Inserir-
->ListaIndice->Nomenclatura).
+2) - A partir do \SpecialChar LyX
+ 2.0 existe a opção de inserir lista de nomenclatura(Inserir->Li
+staIndice->Nomenclatura).
  Neste caso, você precisa indicar, ao longo da monografia/dissertação/tese,
  o que entra na nomenclatura.
- O LyX/LaTeX automaticamente monta a nomenclatura para você.
+ O \SpecialChar LyX
+/\SpecialChar LaTeX
+ automaticamente monta a nomenclatura para você.
  Se usar esta opção o arquivo nomenclatura deve ser retirado do arquivo
  master.
  PS: ainda não usei esta opção!
@@ -296,7 +336,7 @@ filename "Cap-Nomenclatura.lyx"
 \begin_layout Standard
 \align block
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align block
@@ -359,9 +399,19 @@ o que já foi feito, e crítica aos trabalhos existentes destacando a necessidad
 
 \begin_layout Standard
 \align block
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap3-RevisaoDeModelos.lyx"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -391,32 +441,71 @@ filename "Cap4-Metodologia.lyx"
 \end_layout
 
 \begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap5-Cronograma.lyx"
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+o passo a passo de como vai fazer pesquisa.
+\end_layout
 
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-O cronograma só aparece no projeto!
-\end_layout
-
+\begin_inset Separator latexpar
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\align block
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-o passo a passo de como vai fazer pesquisa.
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap5-Desenvolvimento.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap6-Resultados.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap7-Conclusoes.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Resultados e Análise dos Resultados.
+ Se ficar muito extenso pode separar em dois capítulos, Cap.
+ Resultados e Cap.
+ Análise Resultados.
 \end_layout
 
 \end_inset
@@ -451,7 +540,7 @@ rhead{}
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibliografia"
-options "abnt-alf"
+options "plain"
 
 \end_inset
 
@@ -459,6 +548,12 @@ options "abnt-alf"
 \end_layout
 
 \begin_layout Standard
+\start_of_appendix
+\noindent
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \start_of_appendix
 \noindent
 \begin_inset CommandInset include
@@ -470,22 +565,28 @@ filename "Cap-Apendice_A.lyx"
 
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Leia aqui no apêndice A como incluir listagens de código (ligaćão com arquivos
- externos)!
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\noindent
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Leia aqui no apêndice A como incluir listagens de código (ligação com arquivos
+ externos)!
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 \noindent
 \begin_inset CommandInset include
 LatexCommand include
@@ -494,8 +595,13 @@ filename "Cap-Apendice_B.lyx"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Leia aqui no apêndice B como fazer citações!
@@ -505,7 +611,7 @@ Leia aqui no apêndice B como fazer citações!
 
 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Todo material auxiliar, não diretamente relacionado ao trabalho deve estar
@@ -543,6 +649,8 @@ Some aí um bom documento de apresentação, com apresentação bem ensaiada,
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+name "Índice"
+literal "true"
 
 \end_inset
 
@@ -552,6 +660,20 @@ status collapsed
 
 \begin_layout Plain Layout
 Índice remissivo
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+para ter et all em itálico acrescente, junto com suas outras opcões: 
+\backslash
+usepackage[abnt-etal-text=emph,......]{abntcite} ou 
+\backslash
+usepackage[abnt-etal-text=it,......]{abntcite} 
 \end_layout
 
 \end_inset

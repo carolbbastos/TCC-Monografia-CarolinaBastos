@@ -161,9 +161,9 @@ No presente trabalho desenvolve-se um simulador numérico bidimensional de
  fluidos compressíveis em meios porosos.
  A modelagem do problema utiliza a equação de Forchheimer para representar
  os efeitos Não-Darcyanos, devido à alta velocidade que pode ocorrer nas
- proximidades do poço; além de testa o conceito do fator de película dependente
+ proximidades do poço; além de testar o conceito do fator de película dependente
  da vazão.
- A validade do simulador é feita através de comparações com soluções analíticas
+ A validação do simulador é feita através de comparações com soluções analíticas
  do problema.
 \end_layout
 
@@ -172,6 +172,22 @@ No presente trabalho desenvolve-se um simulador numérico bidimensional de
 status collapsed
 
 \begin_layout Plain Layout
+No presente trabalho desenvolve-se um estudo das representações reconstruídas
+ em 3D, um novo algoritmo para
+\emph on
+ 
+\emph default
+determinação das configurações de equilíbrio em processos bifásicos de invasão
+ de fluidos e um método para determinação da permeabilidade através do Modelo
+ do Grafo de Conexão Serial;
+\emph on
+ 
+\emph default
+Valida-se os modelos e algoritmos desenvolvidos contra dados experimentais
+ de intrusão de mercúrio e de permeabilidade de rochas reservatório de petróleo.
+\end_layout
+
+\begin_layout Itemize
 O primeiro parágrafo da introdução pode ser um super resumo de sua monografia/di
 ssertação/tese - veja o exemplo acima.
  A ideia é fazer um resumo do resumo.
@@ -216,11 +232,12 @@ Dentre as atividades atribuídas à um(a) engenheiro(a) de petróleo, a descober
  desses fluidos dentro do meio poroso para definir o potencial de produção
  da jazida e aplicar técnicas que maximizem e tornem a recuperação do óleo
  e do gás a mais eficiente possível.
+ 
 \end_layout
 
 \begin_layout Standard
-A tomada de decisões para a explotação de um campo de petróleo não é uma
- tarefa simples, ela requer uma série de perguntas e comparar diferentes
+A tomada de decisões para a explotação de um campo de petróleo não é então
+ uma tarefa simples, ela requer uma série de perguntas e comparar diferentes
  opções: qual a quantidade de poços necessários, onde perfurá-los, qual
  o design mais apropriado, o método de recuperação que será adotado, a previsão
  de comportamento do reservatório e seu fator de recuperação, além de estimar
@@ -230,6 +247,7 @@ A tomada de decisões para a explotação de um campo de petróleo não é uma
  numérica de reservatórios: uma ferramenta essencial na indústria do petróleo,
  já que a qualidade dessas decisões resultam no investimento de milhões
  de dólares para desenvolver o campo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -246,62 +264,50 @@ A simulação de reservatórios é a técnica mais sofisticada de previsão de
  de tempo, enquanto que a vazão e a pressão, geralmente de fundo, são registrada
 s.
  Esses testes merecem destaque porque permitem conhecer parâmentros do reservató
-rio como a permeabilidade e o fator de película a partir da interpretação
+rio, como a permeabilidade e o fator de película, a partir da interpretação
  dos resultados obtidos.
  Hoje existem diversos modelos analíticos que buscam interpretar esses dados
  de pressão e vazão contra o tempo e o domínio dessa teoria é imprescindível
  para o desenvolvimento desses modelos.
+ 
 \end_layout
 
 \begin_layout Standard
-Nas últimas décadas, com o crescimento da utilização e da capazidade de
+Nas últimas décadas, com o crescimento da utilização e da capacidade de
  processamento dos computadores, os métodos numéricos ganharam importância
  nessa área, especialmente a integração com os estudos de caracterização
  e de simulação de reservatórios.
- Os primeiros métodos de interpretação, pelo uso de gráficos log-log, são
+ Os primeiros métodos de interpretação, pelo uso de gráficos loglog, são
  limitados quando se propõe estimar a capacidade de produção do poço, mas
  com a introdução da análise da derivada da pressão em 1983, e o desenvolvimento
  de complexos modelos de interpretação capazes de explicar detalhes geológicos,
  a análise do transiente de pressão se tornou uma poderosa ferramenta para
- a caracterização do reservatório 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Gringarten"
-literal "false"
-
-\end_inset
-
-.
+ a caracterização do reservatório (??).
+ 
 \end_layout
 
 \begin_layout Standard
 Junto a esse cenário, o gás natural recebeu signiticativa atenção devido
  aprovação da Nova Lei do Gás Natural - Lei nº 14.134, de 2021, que extingue
- o regime de concessão, permitinfo a atuação de novos agentes no mercado
+ o regime de concessão, permitindo a atuação de novos agentes no mercado
  nacional de gás natural e biocombustíveis.
  Segundo a projeção de demanda de gás natural, apresentada no relatório
- do EPE 2020 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Relatorio"
-literal "false"
-
-\end_inset
-
-, essa irá crescer cerca de 5% ao ano considerando o horizonte de 2021 a
- 2030.
+ do EPE 2020 (??), essa irá crescer cerca de 5% ao ano considerando o horizonte
+ de 2021 a 2030.
  Nessas circunstâncias, espera-se que as empresas operadoras de campos de
  petróleo concentre seus esforços na exploração deste recursos, buscando
  extrair o máximo possível com o menor custo.
+ 
 \end_layout
 
 \begin_layout Standard
 E para que os(as) engenheiros(as) elaborem os projetos de desenvolvimento
- do campo, tais como o sistema de perfuração dos poços, mecaminisos de produção,
- elevação e escoamento, que permitam a produção do gás natural de forma
- eficiente, é necessário, a priori, simular e interpretar os testes de pressão
- que, se tratando de reservatórios de gás, precisam de adaptações no métodos
- de análise.
+ desses campos, tais como o sistema de perfuração dos poços, mecaminisos
+ de produção, elevação e escoamento, que permitam a produção do gás natural
+ de forma eficiente, é necessário, a priori, simular e interpretar os testes
+ de pressão que, se tratando de reservatórios de gás, precisam de adaptações
+ no métodos de análise.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -309,9 +315,9 @@ Os métodos originalmente desenvolvidos para análise de teste de pressão
  assumem escoamento monofásico de um fluido pouco compressível (geralmente
  líquidos), o que resulta numa formulação do problema através de equações
  diferenciais parciais lineares.
- Ao se tratar de um fluido compressível- caso do gás - o escoamento no meio
- poroso se torna mais complexo, e precisamos usar o conceito de pseudo-pressão,
- visando linearizar (parcialmente) o problema.
+ Ao se tratar de um fluido compressível - caso do gás - o escoamento no
+ meio poroso se torna mais complexo e precisamos usar o conceito de pseudo-press
+ão, visando linearizar (parcialmente) o problema.
  Além disso, o estudo de fluxo de gás envolve condições de alta velocidade
  nas vizinhanças do poço, isso significa que a Lei de Darcy, utilizada na
  formulação dos problemas convencionais, é incapaz de descrever esse fluxo,
@@ -320,6 +326,7 @@ Os métodos originalmente desenvolvidos para análise de teste de pressão
  quedas adicionais de pressão nas proximidades do poço, resultado do escoamento
  Não-Darcyano, que pode ser representado por um fator de película dependente
  da vazão.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -366,11 +373,11 @@ Objetivo geral:
 \end_layout
 
 \begin_deeper
-\begin_layout Itemize
+\begin_layout Standard
 Desenvolver um simulador de fluxo para analisar o comportamento da pressão
  em testes de poços produtores de gás, através da linealização da equação
- do escomaneto para fluidos compressíveis e do conceito de fatos de película
- dependente da vazão, esse último para representar os efeitos não-darcyanos;
+ do escomaneto para fluidos compressíveis e do conceito de fator de película
+ dependente da vazão, esse último para representar os efeitos nãodarcyanos;
  além disso, obter parâmetros do reservatório como a permeabilidade e as
  componentes do fator de película total ou aparente.
 \end_layout
@@ -388,6 +395,7 @@ Objetivos específicos:
 \begin_layout Itemize
 Modelar física e matematicamente o problema do escoamento monofásico de
  fluidos compressíveis em meios porosos.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -398,17 +406,17 @@ Desenvolver um simulador numérico bidimensional para resolver o problema
 \begin_layout Itemize
 Testar a validade da linearização da equação do escoamento para fluidos
  compressíveis.
+ 
 \end_layout
 
 \begin_layout Itemize
-Testar o conceito de fator de película dependentes da vazão.
+Testar o conceito de fator de película dependente da vazão.
+ 
 \end_layout
 
 \begin_layout Itemize
 Obter parâmetros do reservatório: comportamento da pressão com o tempo,
- permeabilidade e o fator de película - 
-\shape italic
-Skin.
+ permeabilidade e o fator de película - Skin.
 \end_layout
 
 \begin_layout Itemize
@@ -416,16 +424,6 @@ Verificar e validar o simulador - comparação com soluções analíticas.
 \end_layout
 
 \end_deeper
-\begin_layout Standard
-A 
-\emph on
-originalidade do tema
-\emph default
- esta associada à ....
- [descrever o que é inovador em seu trabalho, aquilo que você fez e que
- se destaca]...
-\end_layout
-
 \begin_layout Section
 Organização do Documento
 \begin_inset Index idx
@@ -491,41 +489,29 @@ Apresenta-se nesta seção a organização do documento.
 \end_layout
 
 \begin_layout Standard
-No Capítulo 2, 
-\begin_inset Quotes eld
-\end_inset
-
-Revisão Bibliográfica
-\begin_inset Quotes erd
-\end_inset
-
-, apresenta-se uma revisão bibliográfica detalhada dos trabalhos, técnicos
- e científicos, que estão diretamente relacionados ao presente trabalho.
+No Capítulo 2, “Revisão Bibliográfica”, apresenta-se uma revisão bibliográfica
+ detalhada dos trabalhos, técnicos e científicos, que estão diretamente
+ relacionados ao presente trabalho.
  São apresentados os testes de pressão mais comuns utilizados na indústria
  do petróleo para reservatórios de gás, as metodologias de interpretação
  e análise, comparações com modelos analíticos de interpretação e um modelo
- matemático para reresentar o 
-\shape italic
-Skin
-\shape default
- Não-Darcyano.
-\end_layout
-
-\begin_layout Standard
-No Capítulo 3, 
-\begin_inset Quotes eld
-\end_inset
-
-Metodologia
-\begin_inset Quotes erd
-\end_inset
-
-, apresenta-se a metodologia científica a ser utilizada no desenvolvimento
- deste trabalho.
+ matemático para reresentar o Skin Não-Darcyano.
  
 \end_layout
 
 \begin_layout Standard
+No Capítulo 3, “Metodologia”, apresenta-se a metodologia científica a ser
+ utilizada no desenvolvimento deste trabalho.
+ Inclui-se inofrmações sobre a motivação para o tema, classificação da pesquisa
+ (área da pesquisa), instrumentos utilizados (materiais, equipamentos, softwares
+(, dados, experimentos/ensaios/simulações e formas de análise e interpretação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 No Capítulo 4, 
 \begin_inset Quotes eld
 \end_inset
@@ -534,13 +520,13 @@ Revisão dos Conceitos e Modelos a Serem Utilizados
 \begin_inset Quotes erd
 \end_inset
 
-, apresenta-se uma introdução ao fluxo de gases em meios porosos, revisando
- as equações de fluxo de gases ideiais e reais, como as leis de Darcy e
- Forchheimer, que formam a base para o entendimento dos testes de poços
- de petróleo.
+, apresenta-se um conjunto de conceitos e modelos desenvolvidos por outros
+ autores mas que estão diretamente relacionados a este trabalho e que serão
+ amplamente utilizados.
+ Especialistas da área poderão pular a leitura deste capítulo.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 No Capítulo 5, 
 \begin_inset Quotes eld
 \end_inset
@@ -549,12 +535,10 @@ Desenvolvimento
 \begin_inset Quotes erd
 \end_inset
 
-, apresenta-se o desenvolvimento técnico do trabalho, a modelagem físico-matemát
-ica do problema, a discretização da equação diferencial parcial, apresentando
- as codições incial e de contorno e o método de solução numérica empregado.
+, apresenta-se os modelos/métodos/algoritmos/ensaios que foram desenvolvidos.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 No Capítulo 6, 
 \begin_inset Quotes eld
 \end_inset
@@ -563,12 +547,10 @@ Resultados e Análises
 \begin_inset Quotes erd
 \end_inset
 
-, apresenta-se os resultados obtidos da verificação do simulador com base
- em comparações feitas com soluções analíticas desenvolvidas a partir desses
- resultados.
+, apresenta-se os resultados obtidos e análises desenvolvidas.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 No Capítulo 7, 
 \begin_inset Quotes eld
 \end_inset
@@ -577,11 +559,10 @@ Conclusões
 \begin_inset Quotes erd
 \end_inset
 
-, apresenta-se neste capítulo as conclusões obtidas após as análise e sugestões
- para trabalhos futuros na área de fluxo em meios porosos e testes de poços.
+, apresenta-se neste capítulo as conclusões e sugestões para trabalhos futuros.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Apresenta-se a seguir as 
 \begin_inset Quotes eld
 \end_inset
@@ -601,7 +582,7 @@ Apêndices
 :
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Apêndice_A: 
 \begin_inset Quotes eld
 \end_inset
@@ -613,7 +594,7 @@ XXX
 , ...
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Apêndice_B: 
 \begin_inset Quotes eld
 \end_inset
@@ -625,7 +606,7 @@ XXX
 , ...
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Apêndice_C: 
 \begin_inset Quotes eld
 \end_inset
@@ -635,6 +616,11 @@ XXX
 \end_inset
 
 , ...
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -674,18 +660,6 @@ Nota:
 Lembre-se que se a figura, foto, esquemas, etc, for colorido o mesmo deve
  obrigatoriamente impresso em cores.
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "bibliografia"
-options "apalike"
 
 \end_inset
 

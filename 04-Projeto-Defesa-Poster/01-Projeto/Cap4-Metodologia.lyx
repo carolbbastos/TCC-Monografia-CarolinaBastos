@@ -1,7 +1,9 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abnt
 \begin_preamble
 \usepackage {graphicx}
@@ -15,18 +17,20 @@
 \maintain_unincluded_children false
 \language brazilian
 \language_package default
-\inputencoding latin1
+\inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -38,16 +42,26 @@
 \use_hyperref false
 \papersize a4paper
 \use_geometry true
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -62,7 +76,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -127,6 +144,19 @@ Apresenta-se neste capítulo a metodologia científica a ser utilizada no
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Apresenta-se neste capítulo a metodologia científica a ser utilizada no
+ desenvolvimento deste trabalho.
+ Inclui-se informações sobre a motivação para o tema, classificação da pesquisa
+ (área da pesquisa), intrumentos utilizados (materiais, equipamentos, softwares)
+, dados, experimentos/ensaios/simulações e formas de análise e interpretação.
+ 
+\end_layout
+
 \begin_layout Itemize
 Descreva de forma objetiva a metodologia do trabalho a ser desenvolvido,
  a sequência científica, de forma que outros autores possam reproduzir seu
@@ -136,6 +166,10 @@ Descreva de forma objetiva a metodologia do trabalho a ser desenvolvido,
 
 \begin_layout Itemize
 O objetivo deste capítulo é:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -158,6 +192,10 @@ Anunciar as ideias mestras adotadas e o plano de trabalho seguido.
 
 \begin_layout Itemize
 Instrumentos:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -190,6 +228,11 @@ Estudos estatíscicos, testes e validações: Indicar como os resultados serão
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Motivação Para o Tema
 \begin_inset Index idx
@@ -211,8 +254,93 @@ name "sec:Motivacao-Para-o-Tema"
 
 \end_layout
 
+\begin_layout Standard
+A extração de óleo e gás é uma atividade complexa que demanda grandes investimen
+tos.
+ Para evitar desperdícios de tempo e recursos, e otimizar a quantidade de
+ hidrocarbonetos a serem recuperados numa jazida, todas as operações de
+ produção precisam ser estudadas previamente, através dos modelos físicos
+ e matemáticos, que permitem prever a viailidade da operação a ser realizada.
+ 
+\end_layout
+
+\begin_layout Standard
+Em alguns casos, os modelos matemáticos que representam o sistema de poços
+ e o reservatório são extremamente complexos, e não é possível resolver
+ estes problemas matemáticos de forma analítica.
+ Nestes casos, a análise do problema é feita através de simuladores numéricos,
+ que resolvem o modelo matemático com o auxílio do computador.
+ As tomadas de decisões, que envolvem o investimento de milhões ou bilhões
+ de dólares para cada campo, são então fortemente dependentes dos estudos
+ de simulação, que poderiam ser feitos com simuladores comerciais, porém
+ estes simuladores apresentam, pelo menos, três desvantagens importantes:
+\end_layout
+
+\begin_layout Enumerate
+Foram projetados para resolver problemas em escalas espaciais e temporais
+ diferentes das envolovidas em alguns dos problemas a serem estudados.
+ Os simuladores usualmente encontrados no mercado foram desenvolvidos para
+ avaliar a viabilidade econômica e rentabilidade de projetos de produção,
+ otimização da localização e quantidade de poços para produção de um campo,
+ cálculo do potencial de produção, seleção do melhor método de recuperação
+ secundária e/ou avançada, estudo da sensibilidade dos resultados obtidos
+ aos parâmetros de entrada do modelo, cálculo do fator de recuperação, estimativ
+a de recursos e reservas, entre outros.
+ Estes são problemas na escala de campo, que requerem da solução intervalos
+ de tempo de meses ou anos, enquanto que o simulador desenvolvido no presente
+ trabalho investigaria apenas uma região na vizinhança do poço, com extensão
+ na ordem dos metros, em intervalos de tempo da ordem dos minutos ou horas.
+\end_layout
+
+\begin_layout Enumerate
+Os modelos empregados nesses simuladores comerciais são fechados, conhecidos
+ como modelos 
+\begin_inset Quotes eld
+\end_inset
+
+caixa-preta
+\begin_inset Quotes erd
+\end_inset
+
+, nos quais o usuário não tem acesso aos detalhes do processo de simulação
+ e não tem a possibilidade de alterar e adapatar as funções originais para
+ a solução do seu problema específico, tampouco acrescentar outras funcionalidad
+es.
+\end_layout
+
+\begin_layout Enumerate
+A terceira desvantagem desses simuladores é o seu alto custo.
+ O investimento para se obter uma licença desses softwares é alto e, adicionalem
+nte, estes programas sofrem frequentes evoluções e são substituídos por
+ versões atualizadas, obrigando muitas vezes a novos investimentos e a necessida
+de de suporte técnico e manutenção expendiosas.
+\end_layout
+
+\begin_layout Standard
+Como alternativa a esses simuladores comerciais, este projeto propõe o desenvolv
+imento de um simulador numérico, específico para solução de problemas de
+ análise de testes de pressão em poços de gás.
+ Estas simulações permitirão estudar e avaliar o desempenho do reservatório
+ ao longo do tempo, sob os mais variados cenários e situações, uma vez que
+ permite analisar a influência de diversos parâmetros.
+ Outra vantagem do trabalho desenvolvido é que servirá como plataforma,
+ a partir da qual podem ser acrescentadas outras funções, por outros estudantes
+ e pesquisadores.
+ Por ser de código aberto, o programa não exigirá uma licença restritiva
+ para sua distribuição e os usuários poderão ter acesso ao seu código fonte
+ e liberdade para adaptá-lo às suas necessidades e estudos de casos específicos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Itemize
 Envolvimento anterior do graduando/mestrando/doutorando com o tema:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -224,6 +352,10 @@ Conhecimentos adquiridas nas disciplinas.
 \end_deeper
 \begin_layout Itemize
 Usos futuros do conhecimento na área em estudo por parte do aluno:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -257,6 +389,10 @@ Formulação de processo de cálculo simplificado para a aplicação dos conceit
 \end_deeper
 \begin_layout Itemize
 Fonte de interesse atual pelo tema:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -269,6 +405,10 @@ Discussões com o orientador dos processos físicos envolvidos, realização
 \end_deeper
 \begin_layout Itemize
 Facilidades pessoais do aluno para a abordagem do tema:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -291,6 +431,10 @@ Facilidade no uso dos equipamentos experimentais.
 \end_deeper
 \begin_layout Itemize
 Dificuldades atuais do aluno que podem ser minoradas a partir do trabalho:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -316,6 +460,11 @@ Ampliação do conhecimento de alguns conceitos envolvidos no processo.
 \end_layout
 
 \end_deeper
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Classificação da Pesquisa
 \begin_inset Index idx
@@ -349,9 +498,21 @@ Quanto ao fim, área, sub-área, tema específico e disciplinas relacionadas
 
 \begin_layout Itemize
 Quanto ao fim:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
+\begin_layout Itemize
+A pesquisa desenvolvida é classificada como aplicada, já que busca gerar
+ conhecimento para a aplicação prática e dirigida da solução de problemas
+ que contem objetivos anteriormente definidos.
+ 
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Itemize
 Pura
 \end_layout
@@ -360,46 +521,113 @@ Pura
 Aplicada
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Área e sub-área de estudo:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+Trabalho desenvolvido na área de Engenharia de Reservatórios, na sub-área
+ de Simulação Numérica de Reservatórios.
+ Aborda também aspectos da área de Engenharia de Poços, mais especificadamente
+ operações de estimulaçao quando o objetivo é diminuir o dano à formação.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 indique a área e sub-área da pesquisa, tome como base a definição das áreas
  de pesquisa do CNPq.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Subordinação do tema a áreas do conhecimento científico:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+Métodos Numéricos.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 indique as áreas do conhecimento científico as quais o trabalho esta relacionado.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Disciplinas relacionadas:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+Engenhria de Reservatórios, Avaliação de Formações, Engenharia de Poços,
+ Modelagem Numérica-Computacional e Programação.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 indique disciplinas relacionadas,
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Áreas não incluidas:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+Áreas da engenharia de poços relacionadas à estimulação ácida, fraturamento
+ hidráulico, entre outras operações de estimulação também estão relacionadas
+ mas não serão consideradas.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 indique áreas correlacionadas mas que no seu caso não serão consideradas/utiliza
 das.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -417,7 +645,7 @@ Tipo de modelagem
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Quanto-ao-tipo-de-modelagem"
+name "subsec:Quanto-ao-tipo-de-modelagem"
 
 \end_inset
 
@@ -425,8 +653,24 @@ name "sub:Quanto-ao-tipo-de-modelagem"
 \end_layout
 
 \begin_layout Standard
-O presente trabalho é de caráter ...
-\end_layout
+O presente trabalho é de caráter numérico-computacional, pois envolve o
+ estudo de modelos numérico-computacionais e o desenvolvimento de algoritmos
+ e programas que dão resposta ao problema proposto.
+ A modelagem físico-matemática do problema é desenvolida a partir da Equação
+ da Difusividade Hidráulica (EDH) adaptada para o caso de fluidos compressíveis.
+ Na parte da modelagem numérico-computacional a discretização da equação
+ está baseada no método dos volumes finitos e o avanço temporal das equações
+ não-lineares resultantes é totalmente implícito, de acordo com o método
+ de Newton-Raphson, com Jacobiano calculado de forma semi-analítica.
+ Para obter a solução do problema, foi construído o simulador no 
+\shape italic
+software
+\shape default
+ Matlab, linguagem C, grid definido em coordenadas cilindricas (r, z).
+ A verificação, validação e comparação é feita com modelos analíticos da
+ literatura.
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsubsection
 Modelagem Teórica
@@ -505,11 +749,16 @@ Neste tipo de modelagem, embora possam ser utilizados modelos matemáticos
  através do modelo experimental.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Quanto ao tipo de análise
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Quanto-ao-tipo-de-analise"
+name "subsec:Quanto-ao-tipo-de-analise"
 
 \end_inset
 
@@ -517,9 +766,11 @@ name "sub:Quanto-ao-tipo-de-analise"
 \end_layout
 
 \begin_layout Standard
-Quanto ao tipo de análise podemos classificar a pesquisa em ....
+Quanto ao tipo de análise podemos classificar a pesquisa em em indutiva,
+ pois, partindo de um número limitado de resultados de simulações numéricas
+ obtém conclusões que se aplicam em casos gerais.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 indutiva, dedutiva ou analítica.
@@ -528,7 +779,8 @@ indutiva, dedutiva ou analítica.
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Subsubsection
 Indutiva
@@ -536,6 +788,7 @@ Indutiva
 LatexCommand nomenclature
 symbol "Indução"
 description "Indução"
+literal "true"
 
 \end_inset
 
@@ -559,6 +812,7 @@ Dedutiva
 LatexCommand nomenclature
 symbol "Dedução"
 description "Dedução"
+literal "true"
 
 \end_inset
 
@@ -577,6 +831,7 @@ Analítica - analise e síntese
 LatexCommand nomenclature
 symbol "Análise e síntese"
 description "Análise e síntese"
+literal "true"
 
 \end_inset
 
@@ -592,11 +847,16 @@ Analisar um fenômeno consiste em partilhar o mesmo de forma a através do
 Sintetizar é reagrupar os grupos de dados analisados em separado.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Limitação do trabalho
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Limitacao-do-trabalho"
+name "subsec:Limitacao-do-trabalho"
 
 \end_inset
 
@@ -622,6 +882,14 @@ Limitações
 \end_layout
 
 \begin_layout Itemize
+O trabalho refere-se ao comportamento de uma porção relativamente pequena
+ de um reservatório, na vizinhança de um poço produtor.
+ A intensão do trabalho é a de capturar eventos que acontecem nas escalas
+ de centímetros até centenas de metros.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
 Todo o trabalho será desenvolvido no LENEP/CCT/UENF.
  
 \end_layout
@@ -641,15 +909,22 @@ deve-se aqui delimitar claramente o trabalho nos seus aspectos espaciais.
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Limitações temporais
 \end_layout
 
 \begin_layout Itemize
-Os dados coletados cobrem o período de ...
- até ...
+O estudo está focado na escala temporal usual de um teste de pressão, ou
+ seja, limitada a alguns dias, mas incluindo a análise de dados amostrados
+ em intervalos de minutos ou horas.
+ 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 deve-se aqui delimitar temporalmente o período dos dados
@@ -657,7 +932,7 @@ deve-se aqui delimitar temporalmente o período dos dados
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -665,10 +940,13 @@ Limitações quanto ao setor da indústria
 \end_layout
 
 \begin_layout Itemize
-O presente trabalho estabelece um estudo ligado a ...
- e a setores ....
+O presente trabalho estabelece um estudo ligado a engenharia de reservatórios,
+ mais especificadamente a simulação de reservatórios, teste de pressão em
+ poços, mas que exige conhecimentos das proprieades dos fluidos, da rocha,
+ aspectos da engenharia de poços como estimulação e fraturamento, domínio
+ das técnicas de modelagem matemática-computacional e linguagem de programação.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 indicar quais partes da indústria de petróleo estão relacionadas direta
@@ -685,11 +963,15 @@ Limitações quanto a fase do empreendimento atingida
 \end_layout
 
 \begin_layout Itemize
-Neste trabalho não se pretende chegar as formulações exatas do problema.
- Será analizado um único lote de daods.
+O trabalho visa mostrar as limitações na aplicabilidade do conceito de pseudopre
+ssão, na análise de testes de pressão em reservatórios de gás, e do conceito
+ de fator de película dependente da vazão, na análise de testes quando os
+ efeitos não-darcyanos são importantes.
+ As simulações realizadas forneceram dados suficientes para formular conclusões
+ a respeito das duas situações.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 geralmente nosso trabalho esta inserido numa subárea de pesquisa mais ampla,
@@ -709,8 +991,9 @@ Limitações quanto aos componentes atingidos
 \end_layout
 
 \begin_layout Itemize
+Todos os componentes da pesquisa foram alcançados.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Muitas vezes os objetivos gerais e o contexto do trabalho dão uma falsa
@@ -739,12 +1022,18 @@ Que partes dos equipamentos/sistemas serão realmente analisadas e consideradas
 Pressupostos
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Pressupostos"
+name "subsec:Pressupostos"
 
 \end_inset
 
 
 \end_layout
+
+\begin_layout Itemize
+Para o presente estudo vamos trabalhar sobre dados disponíveis em livros
+ e artigos.
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Para o presente estudo vamos trabalhar sobre dados disponíveis de ....
@@ -761,7 +1050,7 @@ Todas as formulações e dados conseguidos na bibliografia estão corretos
 Os dados climáticos utilizados serão fornecidos por medições realizadas
  na .....
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Se você vai usar dados de terceiros, deve assumir como hipótese que os mesmos
@@ -772,6 +1061,11 @@ Se você vai usar dados de terceiros, deve assumir como hipótese que os mesmos
 \begin_layout Plain Layout
 Também deve considerar que os dados são suficientes para embasar suas conclusões
 , caso negativo, deve deixar clara a necessidade de análises adicionais.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -801,7 +1095,8 @@ name "sec:Hipoteses"
 \end_layout
 
 \begin_layout Standard
-Nesta seção ...
+Nesta seção serão apresentadas as hipóteses utilizadas no desenvolvimento
+ do trabalho.
 \end_layout
 
 \begin_layout Subsection
@@ -809,13 +1104,7 @@ Hipóteses subjacentes
 \end_layout
 
 \begin_layout Standard
-Estabelecer que a margem de erro ao não se considerar ....
- trás um erro global pequeno, para justificar a sua inclusão nos estudos.
-\end_layout
-
-\begin_layout Standard
-Os estudos demonstram que a consideração de ...
- são insignificantes.
+Não se aplica.
 \end_layout
 
 \begin_layout Subsection
@@ -823,27 +1112,74 @@ Hipóteses de trabalho
 \end_layout
 
 \begin_layout Enumerate
-Exemplo:
+Propriedades das rochas: O meio poroso será caracterizado pela permeabilidade
+ absoluta, 
+\begin_inset Formula $k$
+\end_inset
+
+, e pelo coeficiente de Forchheimer, 
+\begin_inset Formula $\beta$
+\end_inset
+
+, que podem ser heterogêneos e são assumidos constantes na condição de reservató
+rio.
+ A porosidade, 
+\begin_inset Formula $\phi$
+\end_inset
+
+, também pode ser heterogênea, mas é função da pressão.
+ A compressibilidade efetiva da formação será considerada pequena e constante;
 \end_layout
 
 \begin_layout Enumerate
-Não ocorre variação dimensional no tamanho dos poros da telha em função
- da variação da temperatura.
+Propriedades da rocha: Como premissa é considerado que o reservatório e
+ os fluidos se mantêm a temperatura constante durante o processo simulado,
+ portanto suas propriedades dependerão apenas da pressão.
+ O óleo e a água são considerados fluidos ligeiramente compressíveis, enquanto
+ que o gás é considerado compressível, sendo seu comportamento determinado
+ pela equação de estado de gás real;
 \end_layout
 
 \begin_layout Enumerate
-O coeficiente de condução k(h) leva em consideração a transferência de calor
- devido a diferença de temperatura e a transferência de conteúdo de líquido
- entre os volumes de controle.
+Condições do reservatório: Geometria circular selado, com um poço que penetra
+ totalmente a formação.
+ A vazão no poço, medida em condição padrão, é prescrita e pode ser função
+ do tempo;
 \end_layout
 
 \begin_layout Enumerate
-Nas medicoes dos valores de wl(conteúdo de massa mássico) são desconsideradas
- quaisquer variações decorrentes de mudanças no formato dos poros.
+Efeito Não-Darcyano: É representado pela equação de Forchheimer.
+ O modelo empregado representa os efeitos de inércia devidos à alta velocidade
+ que pode ocorrer nas proximidades do poço;
 \end_layout
 
 \begin_layout Enumerate
-...
+As equações que regem o escoamento monofásico são desenvolvidas em coordenadas
+ cillíndricas;
+\end_layout
+
+\begin_layout Enumerate
+Não serão considerados os efeitos gravitacionais;
+\end_layout
+
+\begin_layout Enumerate
+A discretização é dada pelo método de volumes finitos;
+\end_layout
+
+\begin_layout Enumerate
+A solução do sistema não-linear é completamente implícita, pelo método de
+ Newton-Raphson;
+\end_layout
+
+\begin_layout Enumerate
+Os critérios de convergência são baseados na norma dos resíduos e no balanço
+ de materiais;
+\end_layout
+
+\begin_layout Enumerate
+As verificações do simulador serão realizadas a partir de equações analíticas
+ presentes na literatura e métodos de interpretação baseados em gráficos
+ log-log.
 \end_layout
 
 \begin_layout Section
@@ -871,12 +1207,13 @@ Materiais
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Materiais"
+name "subsec:Materiais"
 
 \end_inset
 
  
-\end_layout
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Materiais utilizados nos experimentos (ex: reagentes).
@@ -885,7 +1222,7 @@ Materiais utilizados nos experimentos (ex: reagentes).
 
 \begin_layout Itemize
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 sempre prever que o ensaio pode dar errado e que vai precisar de mais reagente...ou
@@ -911,7 +1248,7 @@ Equipamentos
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Equipamentos"
+name "subsec:Equipamentos-1"
 
 \end_inset
 
@@ -924,13 +1261,18 @@ Listar equipamentos, fabricantes, modelos, série.
 
 \begin_layout Itemize
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Como um trabalho científico precisa ser repetido e modelos diferentes de
  equipamentos podem fazer as coisas de forma diferente; é fundamental informar
  com clareza os dados dos equipamentos utilizados.
  Viabiliza-se desta forma a repetitibilidade do experimento.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -952,7 +1294,7 @@ Softwares
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Softwares"
+name "subsec:Softwares"
 
 \end_inset
 
@@ -960,12 +1302,13 @@ name "sub:Softwares"
 \end_layout
 
 \begin_layout Itemize
-Listar softwares utilizados, sites, versões.
-\end_layout
-
-\begin_layout Itemize
+O simulador numérico foi desenvolvido no 
+\shape italic
+Software
+\shape default
+ Matlab, versão R2020a.
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Como um trabalho científico precisa ser repetido e diferentes softwares
@@ -1001,6 +1344,12 @@ name "sec:Dados"
 \end_layout
 
 \begin_layout Itemize
+Os dados utilizados nas simulações foram retirados de artigos científicos
+ e livros da referência bibliográfica.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
 Indicar a origem dos dados (local/período/contatos fornecedor).
 \end_layout
 
@@ -1022,6 +1371,11 @@ Também aqui deve-se estar atendo para a questão da repetitibilidade, tanto
  danificadas ou insuficientes!
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Experimentos
 \begin_inset Index idx
@@ -1041,9 +1395,10 @@ name "sec:Experimentos-Ensaios-e-Simulacoes"
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Nesta seção ...
 \end_layout
 
@@ -1061,7 +1416,7 @@ Ensaios
  laboratoriais
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Ensaios-laboratoriais"
+name "subsec:Ensaios-laboratoriais"
 
 \end_inset
 
@@ -1096,6 +1451,11 @@ Informar como os resultados dos ensaios serão classificados, analisados
  e validados.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Simulações
 \begin_inset Index idx
@@ -1110,12 +1470,67 @@ Simulações
  computacionais
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Simulações-computacionais"
+name "subsec:Simulações-computacionais"
 
 \end_inset
 
 
 \end_layout
+
+\begin_layout Itemize
+As simulações realizadas serão cenários fictícios, cujos dados do sistema
+ poço-reservatório serão extraídos de artigos.
+ Serão analisadas diversos passos iniciais de tempo, variações do raio externo
+ do reservatório e sua influência nos resultados, variação na vazão e a
+ consequência disso no fator de película - 
+\shape italic
+Skin
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para determinar a convergência do método de Newton-Raphson, usado para resolver
+ iterativamente as equações, serão empregados dois critérios, baseados na
+ norma dos resíduos e no balanço de materiais.
+ Os critérios são normalizados com características particulares de cada
+ simulação, para torná-los independentes do problema.
+ Valores entre 
+\begin_inset Formula $10^{-5}$
+\end_inset
+
+e 
+\begin_inset Formula $10^{-4}$
+\end_inset
+
+para a norma dos resíduos e 
+\begin_inset Formula $10^{-8}$
+\end_inset
+
+e 
+\begin_inset Formula $10^{-7}$
+\end_inset
+
+para o balanço de materiais serão considerados adequados para a simulação
+ do escoamento monofásico de gases reais.
+\end_layout
+
+\begin_layout Itemize
+Para verificar a precisão do simulador numérico de reservatóros desenvolvido
+ serão realizadas comparações com soluções analíticas disponíveis.
+ No caso do escoamento de gases reais, embora não esteja disponível uma
+ solução analítica simples, é feito uma comparação qualitativa com as soluções
+ para líquido, levando em conta as conclusões apontadas por Wattenbarger
+ and Ramey Jr.
+ (1968) e Reynolds et al.
+ (1987).
+ Estes autores observaram que, durante o regime radial, a solução do problema
+ não-linear é similar à solução analítica para líquidos, quando comparada
+ em termos da pseudopressão adimensional e do tempo adimensional, calculado
+ com as propriedades iniciais do sistema.
+\begin_inset Note Note
+status collapsed
 
 \begin_layout Itemize
 Informar como o software será validado.
@@ -1149,6 +1564,11 @@ Informar como os resultados das simulações serão classificados, analisados
  e validados.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Estudos Estatísticos
 \begin_inset Index idx
@@ -1171,6 +1591,12 @@ name "sec:Estudos-Estatisticos"
 \end_layout
 
 \begin_layout Itemize
+Não foram realizadas análises estatísticas, pois as soluções analíticas
+ e numéricas empregadas são totalmente determinísticas.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
 Testes e validações: Indicar como os resultados serão processados e analisados.
 \end_layout
 
@@ -1185,6 +1611,11 @@ Indicar quais métodos e estudos estatísticos serão realizados sobre os dados
 Indicar critérios para verificação dos erros envolvidos (limites dos erros)
  e a necessidade ou não de novos ensaios/simulações, novos levantamentos
  de dados....
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

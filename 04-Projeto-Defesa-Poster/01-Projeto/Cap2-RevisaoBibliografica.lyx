@@ -1,7 +1,9 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass abnt
 \begin_preamble
 \usepackage {graphicx}
@@ -14,18 +16,20 @@
 \maintain_unincluded_children false
 \language brazilian
 \language_package default
-\inputencoding latin1
+\inputencoding iso8859-1
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -37,16 +41,26 @@
 \use_hyperref false
 \papersize a4paper
 \use_geometry true
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
+\use_minted 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -61,7 +75,10 @@
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -115,9 +132,10 @@ name "cha:Revisão-Bibliográfica"
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 No escopo do problema, apresentou-se uma breve revisão dos trabalhos relacionado
 s a tese; Apresenta-se neste capítulo uma revisão bibliográfica detalhada
  dos trabalhos, técnicos e científicos, que estão diretamente relacionados
@@ -175,7 +193,7 @@ name "sec:Artigos-Tecnologicos"
  (+gerais)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 ....
 \end_layout
 
@@ -216,7 +234,7 @@ name "sec:Artigos-Cientificos"
  (+específicos)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 ....
 \end_layout
 
@@ -251,7 +269,7 @@ name "sec:Critica-aos-Trabalhos-Existentes"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 ....
 \end_layout
 
@@ -272,7 +290,2687 @@ Ou seja, você precisa justificar - do ponto de vista tecnológico e científico
  - a necessidade do seu trabalho!
 \end_layout
 
+\begin_layout Plain Layout
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+
+\lang english
+No Capítulo 2, “Revisão Bibliográfica”, apresenta-se uma revisão bibliográfica
+ detalhada dos trabalhos, técnicos e científicos, que estão diretamente
+ relacionados ao presente trabalho.
+ São apresentados os testes de pressão mais comuns utilizados na indústria
+ do petróleo para reservatórios de gás, as metodologias de interpretação
+ e análise, comparações com modelos analíticos de interpretação e um modelo
+ matemático para representar o Skin Não-Darcyano.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Um teste de poço é uma operação em que se deseja avaliar o potencial produtivo
+ de uma jazida de petróleo e é uma etapa importante na avaliação das formações.
+ Ele pode ser realizado em diversas fases da vida de um campo petrolífero,
+ desde a fase de exploração e desenvolvimento, até a produção e tem como
+ objetivo caracterizar o reservatório através da interpretação dos dados
+ registrados durante a sua execução.
+ O teste consiste basicamente em provocar uma variação na vazão do sistema
+ poço-reservatório e medir a variação correspondente da pressão do poço
+ ao longo do tempo.
+ A interpretação do comportamento da pressão registrada, em conjunto com
+ outros dados e informações relevantes, permitirá a obtenção de parâmetros
+ característicos do poço e do reservatório.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Quando se trata de reservatórios de gás, os testes de poços são realizados
+ com dois objetivos principais: estimar a capacidade de produção do poço
+ e as propriedades da formação.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Os testes usados para estimar a capacidade de produção do poço através do
+ cálculo do absolute-open-flow (AOF) são denominados testes de contra-pressão
+ e os mais conhecidos são: Flow-After-Flow (FAF), isócrono e o isócrono
+ modificado (IM).
+ Os testes permitem também construir a curva de 
+\shape italic
+IPR (Inflow Performance Relationship)
+\shape default
+ que relaciona a pressão no fundo do poço com a vazão de fluidos produzidos
+ em condições de superfície.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+As propriedades da formação, por sua vez, são determinadas através dos testes
+ de pressão, que podem ser testes de fluxo (Drawdown) e de crescimento de
+ pressão (Buildup).
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Testes de Contra-Pressão
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O principal parâmetro usado na comparação da produtividade entre poços de
+ gás é o absolute-open-flow (AOF) - que representa a vazão teórica na qual
+ o poço produziria caso a pressão de fundo fosse zero e é calculado através
+ de um gráfico log-log da vazão contra a diferença de pressão.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Flow-after-Flow (FAF)
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Também chamado de 
+\begin_inset Quotes eld
+\end_inset
+
+backpressure test
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+four point test
+\begin_inset Quotes erd
+\end_inset
+
+, é realizado em duas estapas:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+O poço é submetido a uma seqüência de períodos de vazão crescente;
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+O poço é submetido a um período de estática.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O tempo de duração de cada vazão constante deve ser tal que o regime dominado
+ por fronteiras (regime permanente ou pseudo-permanente) seja atingido,
+ não sendo necessário que cada período tenha o mesmo tempo de duração.
+ O que é uma limitação deste teste, uma vez que, principalmente em reservatórios
+ de baixa permeabilidade, demoram a atingir esse estado.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 3-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ mostra um exemplo do teste em que o histórico da pressão e da vazão é mostrado,
+ sendo 
+\begin_inset Formula $p_{f}$
+\end_inset
+
+ a pressão final de cada período de fluxo.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/test_FAF.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 3-1"
+
+\end_inset
+
+Teste Flow-after-Flow (FAF)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Esse teste pode ser analisado por 2 métodos: Método de Rawlins-Schellhardt
+ e Método de Houpeurt.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Método de Rawlins-Schellhardt
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Rawlins-Schellhardt (1936) propuseram uma equação empírica para analisar
+ os dados desse teste baseada em uma análise de dados de campo.
+ A equação proposta também conhecida como análise C & n, somente aplicável
+ para baixas pressões, é:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q=C\left[m\left(\bar{p}\right)-m\left(p_{f}\right)\right]^{n}\label{eq:1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Onde:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $\bar{p}=Pressão\:Média\:do\:Reservatório$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $p_{f}=Pressão\:no\:Poço\:no\:final\:de\:cada\:período\:de\:fluxo$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Valores de 
+\begin_inset Formula $n$
+\end_inset
+
+ variam de 0.5 - que indica fluxo Não Darcyano - até 1.0, que indica fluxo
+ de Darcy.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Aplicando-se o logaritmo na equação, obtém-se:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+log\:q=log\:C+n\:log\left[m\left(\bar{p}\right)-m\left(p_{f}\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Plotando os dados de pseudo-pressão x vazão num gráfico log x log, esses
+ devem ter o comportamento de uma reta cuja inclinação é 
+\begin_inset Formula $1/n$
+\end_inset
+
+.
+ A AOF pode ser determinada extrapolando a reta até o ponto onde 
+\begin_inset Formula $p_{f}=p_{b},$
+\end_inset
+
+ sendo 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p_{b}$
+\end_inset
+
+ a pressão na superfície, como pode ser visto na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 4-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Interpretacao_FAF.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 4-1"
+
+\end_inset
+
+Interpretação do Teste FAF - Método de Rawlins-Schellhardt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+A constante
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $C$
+\end_inset
+
+ pode ser determinada a partir de um ponto qualquer da reta:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+C=\frac{q_{i}}{\left[\triangle m\left(p_{i}\right)\right]^{n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Usando a equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, com a pressão 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $p_{b}$
+\end_inset
+
+, pode-se determinar AOF:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q_{AOF}=C\left[m\left(\bar{p}\right)-m\left(p_{b}\right)\right]^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+onde os valores de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $C$
+\end_inset
+
+ e 
+\begin_inset Formula $n$
+\end_inset
+
+ já foram calculados anteriormente.
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Método de Houpeurt
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O método de Houpeurt para a interpretação desse teste (ou determinação da
+ AOF) usa a solução do regime pseudo-permanente 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee1996"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+m\left(\bar{p}\right)-m\left(p_{f}\right)=\alpha_{p}\frac{p_{0}qT}{T_{0}kh}\left[1,151log\left(\frac{10,06A}{C_{A}r_{w}^{2}}\right)-\frac{3}{4}+S+Dq\right]\label{eq:5}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Onde:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $S=Skin-Dano\:de\:Formação$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $D=Constante\:de\:Turbulência$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $A=Área\:de\:Drenagem$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $C_{A}=Fator\:de\:Forma\:de\:Dietz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:5"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ pode ser reescrita como:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\triangle m\left(p\right)=m\left(\bar{p}\right)-m\left(p_{f}\right)=aq+bq^{2}\label{eq:6}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+onde
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+a=\alpha_{p}\frac{p_{0}qT}{T_{0}kh}\left[1,151log\left(\frac{10,06A}{C_{A}r_{w}^{2}}\right)-\frac{3}{4}+S\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+b=\alpha_{p}\frac{p_{0}TD}{T_{0}kh}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Dividindo ambos os lados da equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:6"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ por 
+\begin_inset Formula $q$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\frac{\triangle m\left(p\right)}{q}=\frac{m\left(\bar{p}\right)-m\left(p_{f}\right)}{q}=a+bq
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Obtem-se a equação de uma reta, com inclinação 
+\begin_inset Formula $b$
+\end_inset
+
+ e intersecção 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ Plotando-se os dados de 
+\begin_inset Formula $\frac{\triangle m\left(p\right)}{q}\:x\:q$
+\end_inset
+
+ do teste para diferentes 
+\begin_inset Formula $p_{f}$
+\end_inset
+
+ - figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 5-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ - pode-se determinar as constantes 
+\begin_inset Formula $a$
+\end_inset
+
+ e 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Interpretacao_FAF2.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 5-1"
+
+\end_inset
+
+Interpretação do Teste FAF - Método de Houpeurt 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Com tais valores podemos determinar o AOF, a qual é dada pela seguinte expressão
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q_{AOF}=\frac{-a+\sqrt{a^{2}+4b\left[m\left(\bar{p}\right)-m\left(p_{b}\right)\right]}}{2b}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Teste Isócrono
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O teste isócrono foi criado para encurtar o tempo de estabilização requerido
+ para um teste 
+\shape italic
+Flow after Flow
+\shape default
+ e é chamado de isócrono porque os períodos de fluxo têm a mesma duração
+ e é dividido em duas etapas:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Na primeira etapa têm-se diversos fluxos em intervalos de tempo constante
+ e o raio de investigação (
+\begin_inset Formula $r_{i}$
+\end_inset
+
+) é menor que o raio do reservatório (
+\begin_inset Formula $r_{e}$
+\end_inset
+
+), predominando o regime transiente.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Na segunda etapa tem-se o fluxo estendido, onde o raio de investigação é
+ maior ou igual ao raio do reservatório, ou seja, a partir desse momento
+ tem-se a influência das condições de fronteira, estabelecendo-se o regime
+ pseudopermanente.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Este teste é do tipo multi-vazão, significando que é formado por diversos
+ períodos de fluxo intercalados com períodos de estática (
+\shape italic
+shut in
+\shape default
+) ou de vazão nula.
+ Os períodos de fluxo são iguais.
+ Já os períodos de estática são mantidos por um tempo suficiente para que
+ a pressão medida no fundo do poço alcance condições essencialmente estáticas.
+ Além disso, uma etapa final de fluxo estendido, tempo suficiente para alcançar
+ a estabilização da pressão, é necessária.
+ Como o teste se aplica para reservatórios com permeabilidade baixa, o raio
+ de investigação 
+\begin_inset Formula $r_{i}$
+\end_inset
+
+ normalmente não atinge a fronteira do reservatório 
+\begin_inset Formula $r_{e}$
+\end_inset
+
+, portanto 
+\begin_inset Formula $r_{i}<$
+\end_inset
+
+
+\begin_inset Formula $r_{e}$
+\end_inset
+
+, implicando condição transiente.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O teste é importante pois é executado sem a necessidade de que a produção
+ seja interrompida por tempos muito longos, tal que não seja necessário
+ atingir as condições de estabilidade em cada vazão.
+ Como os períodos de fluxo são iguais, o raio de investigação será o mesmo
+ ao fim de cada etapa (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 6-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/test_Isocrono.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 6-1"
+
+\end_inset
+
+Teste Isócrono
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Na figura são apresentados os períodos de fluxo (
+\begin_inset Formula $q$
+\end_inset
+
+) para diversos instantes de tempo e a resposta da pressão (
+\begin_inset Formula $𝑝_{f}$
+\end_inset
+
+), onde: 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Os períodos de fluxo, exceto o último, são iguais;
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Os períodos de estática tem o objetivo de deixar 
+\begin_inset Formula $𝑝\cong\overline{p}$
+\end_inset
+
+; 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Um período de fluxo final no qual o poço estabiliza-se é desejável, mas
+ não essencial.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para esse testes também são usados os métodos de Rawlins-Schellhardt e de
+ Houpeurt com algumas pequenas modificações.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Método de Rawlins-Schellhardt
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+É a mesma equação do teste FAF, porém para o teste isócrono 
+\begin_inset Formula $C$
+\end_inset
+
+ depende do tempo 
+\begin_inset Formula $\left[C\left(t\right)\right].$
+\end_inset
+
+Então, a partir dos dados de pressão e vazão, plota-se a curva 
+\begin_inset Formula $log\left[m\left(\bar{p}\right)-m\left(p_{f}\right)\right]\:x\:log\left(q\right)$
+\end_inset
+
+, para cada vazão e 
+\begin_inset Formula $log\left[m\left(\bar{p}\right)-m\left(p_{f,s}\right)\right]\:x\:log\left(q_{s}\right)$
+\end_inset
+
+, onde 
+\begin_inset Formula $q_{s}$
+\end_inset
+
+ e 
+\begin_inset Formula $p_{f,s}$
+\end_inset
+
+ são a vazão e a pressão no fluxo estendido.
+ A partir da inclinação 
+\begin_inset Formula $1/n$
+\end_inset
+
+, calcula-se o valor de 
+\begin_inset Formula $C\left(t\right)$
+\end_inset
+
+ para o fluxo estendido 
+\begin_inset Formula $\left[C_{s}\right]:$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+C_{s}=\frac{q_{s}}{\left[m\left(\bar{p}\right)-m\left(p_{f,s}\right)\right]^{n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+então a AOF é calculada usando a pressão atmosférica, de acordo com:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q_{AOF}=C_{s}\left[m\left(\bar{p}\right)-m\left(p_{b}\right)\right]^{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+ou extrapolando a curva até a pressão atmosférica, como pode ser visto na
+ figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 7-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Interpretacao_TI.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 7-1"
+
+\end_inset
+
+Interpretação Teste Isócrono - Método de Rawlins-Schellhardt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\lang english
+Método Houpeurt
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para esse teste o método de Houpeurt usa a solução para regime transiente
+ reescrita de uma forma semelhante à solução para regime pseudo-permanente
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee1996"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\frac{\triangle m\left(p\right)}{q}=\frac{m\left(\bar{p}\right)-m\left(p_{f}\right)}{q}=a_{t}+bq
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+onde:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+a_{t}=\alpha_{p}\frac{p_{0}qT}{T_{0}kh}\left[ln\left(\frac{r_{d}}{r_{w}}\right)-\frac{3}{4}+S\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+b=\alpha_{p}\frac{p_{0}qTD}{T_{0}kh}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+e
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+r_{d}=\sqrt{\frac{17,9098\alpha_{t}kt}{\phi\left(\mu c_{t}\right)_{i}}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Plotando os dados 
+\begin_inset Formula $\frac{\triangle m\left(p\right)}{q}\:x\:q$
+\end_inset
+
+, obtém-se uma reta cujos coeficientes são 
+\begin_inset Formula $a$
+\end_inset
+
+ e 
+\begin_inset Formula $b$
+\end_inset
+
+, sendo 
+\begin_inset Formula $b$
+\end_inset
+
+ a inclinação da reta e 
+\begin_inset Formula $a$
+\end_inset
+
+ calculado a partir do fluxo estendido (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 8-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Interpretacao_TI2.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 8-1"
+
+\end_inset
+
+Interpretação Teste Isócrono - Método Houpeurt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+a_{t,s}=\left(\frac{m\left(\bar{p}\right)-m\left(p_{f,s}\right)}{q_{s}}\right)-bq_{s}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+e o AOF:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q_{AOF}=\frac{-a_{t,s}+\sqrt{a_{t,s}^{2}+4b\left(m\left(\bar{p}\right)-m\left(p_{b}\right)\right)}}{2b}-bq_{s}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Teste Isócrono Modificado
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Este teste supera a limitação do teste isócrono, que requer longos tempos
+ de fechamento para atingir a pressão média do reservatório .
+ No teste isócrono modificado, os períodos de fechamento têm a mesma duração,
+ assim como os períodos de fluxo (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 9-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A pressão final de fechamento antes do início do novo fluxo é usada como
+ uma aproximação da pressão média do reservatório.
+ O mesmo procedimento é normalmente repetido quatro vezes.
+ Um ponto estabilizado (estado pseudoestável) geralmente é obtido no final
+ do teste.
+ Os testes isócronos modificados são comumente usados em poços de gás, porque
+ exigem menos tempo e dinheiro para produzir resultados comparáveis aos
+ dos testes isócronos.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/test_IsocronoModificado.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 9-1"
+
+\end_inset
+
+Teste Isócrono Modificado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A AOF pode ser calculada de forma semelhante ao teste isócrono, só que agora
+ utiliza-se a última pressão estática em vez da pressão média do reservatório.
+ A equação usada pode ser reescrita como:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\triangle m\left(p\right)=m\left(p_{s}\right)-m\left(p_{f}\right)=a_{t}q+bq^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+onde
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+a_{t}=\alpha_{p}\frac{p_{0}T}{T_{0}kh}\left[ln\left(\frac{4\alpha_{t}kt}{e^{\gamma}\phi\left(\mu c_{t}\right)_{i}r_{w}^{2}}\right)+S\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+b=\alpha_{p}\frac{p_{0}TD}{T_{0}kh}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $p_{s}=Última\;pressão\;medida\;no\;período\;de\;estática$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $\gamma=0,57722-Constante\;de\;Euler$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $b=Inclinação\;da\;reta\;do\;gráfico\;\frac{\triangle m\left(p\right)}{q}x\;q$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+E 
+\begin_inset Formula $a$
+\end_inset
+
+ calculado usando os dados do fluxo estendido (figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 10-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Interpretacao_TIM.PNG
+	scale 70
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 10-1"
+
+\end_inset
+
+Interpretação Teste Isócrono Modificado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+a_{t,s}=\left(\frac{m\left(p_{s}\right)-m\left(p_{f,s}\right)}{q_{s}}\right)-bq_{s}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+e a AOF através da equação:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+q_{AOF}=\frac{-a_{t,s}+\sqrt{a_{t,s}^{2}+4b\left(m\left(p_{s}\right)-m\left(p_{b}\right)\right)}}{2b}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+
+\lang english
+Observações:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para estimar o AOF, como é recomendado pela teoria, é necessário que os
+ períodos de fluxo (FAF) ou o fluxo estendido (IM) durem até que a pressão
+ seja influenciada pelas fronteiras.
+ Na prática, para alguns casos não é possível esperar que as fronteiras
+ sejam alcançadas, uma vez que, para permeabilidades inferiores a 1 mD,
+ a estabilização da pressão ocorre depois de 100 ou mais horas, o que torna
+ o teste muito longo.
+ Autores mostram que o uso desses métodos sem que os períodos de fluxo durem
+ até que as fronteiras tenham sido alcançadas apresentam erros na estimativa
+ do AOF, devido ao erro no cálculo da inclinação da reta (n).
+ 
+\end_layout
+
+\begin_layout Subsection
+
+\lang english
+Testes de Pressão
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Os testes de fluxo e os testes de crescimento de pressão são os mais utilizados
+ para estimar as propriedades do reservatório como a permeabilidade, a transmiss
+ibilidade e o fator de dano ou película - 
+\shape italic
+Skin.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Teste de Fluxo - Drawdown
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O teste de fluxo é definido pela produção no poço a uma taxa (ou várias
+ taxas) conhecida(s) e constante(s), enquanto a variação da pressão no fundo
+ do poço em função do tempo é registrada como mostra a figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Drawdown.png
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 1"
+
+\end_inset
+
+Teste de Fluxo - Drawdown
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Os cálculos usados no teste de fluxo são baseados na solução da linha-fonte
+ para o regime transiente.
+ Negligenciando o efeito de turbulência, pode-se escrever a solução da linha
+ fonte como:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+m\left(p_{i}\right)-m\left(p_{f}\right)=2,302\left(\alpha_{p}\frac{p_{0}qT}{T_{0}kh}\right)\left[log\left(t\right)+log\left(\frac{4\alpha_{t}k}{e^{\gamma}\phi\left(\mu c_{t}\right)_{i}r_{w}^{2}}\right)+0,869\,S\right]\label{eq:24}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Essa equação pode ser reescrita como:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+m\left(p_{i}\right)-m\left(p_{f}\right)=m'q\left[log\left(t\right)+\bar{S}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+onde
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+m'=2,302\left(\alpha_{p}\frac{p_{0}T}{T_{0}kh}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\bar{S}=log\left(\frac{4\alpha_{t}k}{e^{\gamma}\phi\left(\mu c_{t}\right)_{i}r_{w}^{2}}\right)+0,869\,S
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Com histórico de produção discreto, a equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:24"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (produto da superposição de soluções de linha fonte) é reescrita como:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\frac{m\left(p_{i}\right)-m\left(p_{f}\right)}{q_{n}}=m'\sum_{j=1}^{n}\left[\left(\frac{q_{j}-q_{j-1}}{q_{n}}log(t-t_{j-1}\right)\right]+m'\bar{S}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+para 
+\begin_inset Formula $q_{n}\neq0$
+\end_inset
+
+.
+ Plotando
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+\frac{m\left(p_{i}\right)-m\left(p_{f}\right)}{q_{n}}\:x\:\sum_{j=1}^{n}\left[\left(\frac{q_{j}-q_{j-1}}{q_{n}}log(t-t_{j-1}\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Obtém-se uma reta.
+ A permeabilidade pode ser determinada pela expressão:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+k=2,302\left(\alpha_{p}\frac{p_{0}T}{T_{0}m'h}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O skin pode ser determinado a partir do valor inicial de 
+\begin_inset Formula $\left(\frac{\triangle p}{q}\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+S=1,151\left[\left(\frac{\left(\frac{\triangle p}{q}\right)_{i}}{m'}\right)-log\left(\frac{4\alpha_{t}k}{e^{\gamma}\phi\left(\mu c_{t}\right)_{i}r_{w}^{2}}\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Teste de Crescimento de Pressão - Buildup
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O teste de crescimento de pressão consiste em submeter o poço à um período
+ de estática (vazão nula) após o mesmo ter sido submetido a um período de
+ fluxo (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Figure 2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Os dados de pressão contra o tempo são então medidos.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+É válido ressaltar que, os dados de pressão medidos durante o período de
+ fluxo normalmente apresentam muitos ruídos, e os dados de pressão medidos
+ durante o período de estática contém menos ruído devido à vazão zero imposta
+ no poço; portanto, na prática, utiliza-se mais os dados do período de estática
+ para estimar os parâmetros de reservatórios.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Graphics
+	filename Imagens/Buildup.png
+	scale 120
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset CommandInset label
+LatexCommand label
+name "Figure 2"
+
+\end_inset
+
+Teste de Crescimento de Pressão - Buildup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A solução da linha-fonte para regime transiente com aplicação do princípio
+ da superposição no tempo é a equação usada na interpretação do teste de
+ crescimento de pressão 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee2003"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+m\left(p_{s}\right)=m\left(p_{i}\right)-2,302\left(\alpha_{p}\frac{p_{0}qT}{T_{0}kh}\right)log\left(\frac{t_{p}+\triangle t}{\triangle t}\right)\label{eq:32}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Onde 
+\begin_inset Formula $t_{p}$
+\end_inset
+
+é o tempo de produção e 
+\begin_inset Formula $\triangle t$
+\end_inset
+
+ é o tempo no período de estática.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A forma da equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:32"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ sugere que a permeabilidade seja estimada através da inclinação
+\begin_inset Formula $\left(m\right)$
+\end_inset
+
+da reta semilog de 
+\begin_inset Formula $m\left(p_{s}\right)\,x\,log\left(\frac{t_{p}+\triangle t}{\triangle t}\right)$
+\end_inset
+
+, da forma
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+k=2,302\left(\alpha_{p}\frac{p_{0}qT}{T_{0}mh}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+e o skin através da equação:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+s'=1,151\left[\frac{m\left(p_{1hr}\right)-m\left(p_{f}\right)}{m}-log\left(\frac{a\alpha_{t}k}{e^{\gamma}\phi\left(\mu c_{t}\right)_{i}r_{w}^{2}}\right)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Onde:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $m\left(p_{1hr}\right)=Pseudo-Pressão\:para\:\triangle t=1hr$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $m\left(p_{f}\right)=Última\:pressão\:antes\:do\:período\:de\:estática$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang english
+Efeito do Fluxo Não-Darcyano em Testes em Poços de Gás:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A principal diferença entre os testes de poços de gás e óleo vem do fato
+ de que o skin total de um poço de gás tem duas componentes e uma delas
+ é dependente da vazão.
+ Por causa disso, um poço de gás precisa ser testado, no mínimo, com duas
+ vazões diferentes, para podermos avaliar o modelo de skin pela relação
+ de Forchheimer 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ramey"
+literal "false"
+
+\end_inset
+
+.
+ Sendo assim o skin pode ser separado em dois termos: 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Fator de Película mecânico: Dano à área próxima ao poço que é causado pelas
+ operações de perfuração, completação e produção do poço.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+Fator de Película devido ao fluxo não-Darcyano (ou skin dependente da vazão):
+ é uma forma de medir o efeito da compressão do fluido e caminhos de fluxo
+ não radiais devido altas taxas de fluxo através de meios porosos próximos
+ ao poço.
+ É uma função linear da vazão e pode ser representada pelo coeficiente de
+ fluxo não Darcyano, D.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Smith, Swift e Kiel apresentaram resultados significativos para análises
+ de testes de poços de gás, incluindo o coeficiente de fluxo não-darcyano.
+ Basicamente, os resultados indicam que o fluxo não Darcyano leva a uma
+ queda de pressão adicional perto do poço que pode ser tratado como um efeito
+ de película dependente da vazão.
+ Ou seja, o 
+\shape italic
+skin
+\shape default
+ normalmente calculado para testes Drawdown e Buildup realizados por tempo
+ suficiente para evitar efeitos de estocagem do poço são, na verdade, um
+ efeito de película que inclui, além dos danos causados ao poço por estimulação,
+ efeitos de canhoneio, penetração parcial, também o fluxo não-Darcyano.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Swift e Kiel apresentaram um método alternativo que pode ser usado para
+ ambos os testes que é calcular o efetivo fator de película - S de dados
+ de teste de longa duração.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para testes Buildup:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+S^{'}=1,151\left[\left(\frac{p_{1hora}^{2}-p_{wp}^{2}}{m'}\right)-log\left(\frac{k\bar{p}}{\phi\bar{\mu}S_{g}r_{w}^{2}}\right)+3,23\right]\label{eq:35}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para Drawdown, a mesma equação pode ser usada se 
+\begin_inset Formula $P_{1hora}$
+\end_inset
+
+ for substituído por 
+\begin_inset Formula $P_{i}$
+\end_inset
+
+ e 
+\begin_inset Formula $P_{wp}$
+\end_inset
+
+ é substituído por 
+\begin_inset Formula $P_{1hora}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:35"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ é baseada no pressuposto que o tempo de fluxo antes do fechamento é muito
+ maior do que o tempo de Buildup de uma hora.
+ Isso geralmente é uma suposição válida, mas deve-se ter cuidado quando
+ essas equações são aplicados a testes 
+\shape italic
+drill-stem
+\shape default
+ ou qualquer teste Buildup envolvendo um período de produção muito curto
+ em que os efeitos da estocagem não possam ser negligenciados.
+ O fator de película eficaz S' deve ser calculado em pelo menos dois testes
+ diferentes de Drawdown e/ou Buildup em duas diferentes vazões constante,
+ 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ e 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+, porque: 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+S^{'}=S+Dq
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Um gráfico de 
+\begin_inset Formula $S’\:x\:q$
+\end_inset
+
+ deve resultar em uma linha reta.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $D=Inclinação\:da\:reta-Constante\:de\:fluxo\:não-Darcyano$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $S=Verdadeiro\:fator\:de\:película$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Válida para poços revestidos onde a alta velocidade ocorre devido ao fluxo
+ convergente para os canhoneados (cerca de 50x maior que em casos de poço
+ aberto) ou em poços com completação com gravel packer, não podendo ser
+ aplicado em poços hidraulicamente fraturados.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Spivey2004"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Essse verdadeiro fator de película, que pode ser encontrado extrapolando
+ a linha reta 
+\begin_inset Formula $(q=0)$
+\end_inset
+
+, inclui todas as resistências ao fluxo próximas ao poço, ou seja, todos
+ os fatores que alteram a permeabilidade ao seu redor e pode ser decomposto
+ em:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+S=S_{k}+S_{penet.}+S_{canhoneio}+...
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+O que permite estimar o resultado de uma operação de estimulação específica.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Uma observação importante em testes de poços de gás é que o efeito de fluxo
+ não-Darcyano pode causar uma severa queda de pressão que parece ser do
+ dano do poço e pode realmente obscurecer o efeito das fraturas perto do
+ poço e a interpretação errada deste resultado pode levar a estimulação
+ ineficaz e desnecessária.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Para casos em que não é possível avaliar o teste para duas vazões de fluxo
+ diferentes, a magnitude do coeficiente de fluxo não-Darcyano pode ser estimado
+ a partir de correlações da literatura 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lee1996"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula 
+\begin{equation}
+D=\frac{2.715x10^{-15}\beta Mp_{sc}k}{\mu T_{sc}hr_{w}}\label{eq:38}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Onde:
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $D=Coeficiente\:de\:Fluxo\:Não-Darcyano\:\left[Mscf/D\right]^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $\beta=1.88x10^{-10}k^{-1.47}\phi^{-0.53}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $M=Massa\:Molecular\:do\:Gás\:[lbm/lb-mol]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $P_{sc}=Pressão\:Padrão-medir\:o\:volume\:de\:gás\:padrão\:[psia]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $T_{sc}=Temperatura\:Padrão-medir\:o\:volume\:de\:gás\:padrão\:[°R]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset Formula $\mu_{g,wf}=Viscosidade\:do\:Gás\:avaliada\:p_{wf}\left[cp\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+A equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:38"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ é obtida a partir da integração da equação de Forchheimer entre o raio
+ de drenagem 
+\begin_inset Formula $r_{d}$
+\end_inset
+
+ até o raio do poço 
+\begin_inset Formula $r_{w}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Muitos autores tem considerado vários aspectos do fluxo não-darcyano.
+ Warren fez uso da simulação para modelar testes transientes de pressão
+ em que combinou um fluxo multivazão e em sequência um teste buildup; ele
+ observou que as derivadas da pressão nos tempos finais de duração dos efeitos
+ de estocagem - quando o fluxo não-Darcyano está presente - tem uma inclinação
+ muito mais acentuada do que para situações em que apensa o skin mecânico
+ está presente.
+ Na base desta observação, Warren propôs, para testes buildups, que o comportame
+nto íngreme da derivada durante a transição da estocagem do poço seja um
+ diagnóstico para a presença do fator de película não-darcyano.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Já Spivey propôs um algoritmo para apresentar os resultados do modelo de
+ fluxo não-darcyano em forma de curvas tipo - gráficos log-log da pressão
+ e da derivada da pressão - dada sua importância como ferramenta de identificaçã
+o de regime de fluxo.
+ O algoritmo usa a discretização da integral de convolução de forchhmeimer
+ e é escrito explicitamente na forma adimensional, facilitando o desenvolvimento
+ das curvas tipo.
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Algumas conclusões foram tiradas a partir da análise dos gráficos diagnósticos
+ gerados:
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+A resposta da derivada da pressão para um teste buildup em um poço com coeficien
+te de estocagem e fluxo não-darcyano exibe uma inclinação muito mais acentuada
+ durante a transição entre a estocagem e a região de tempo médio do que
+ para um poço que não apresenta fluxo não-darcyano.
+ Consequentemente, a estocagem do poço terminará muito mais cedo do que
+ no caso do skin Darcyano.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+As curvas tipo em testes buildup e drawdown no modelo de Gringarten e Bourdet
+ (sem efeitos de fluxo não-darcyano) coincidem, enquanto que a natureza
+ não linear do modelo de skin não-Darcyano resulta em formas diferentes
+ da resposta da pressão para esses dois testes.
+\end_layout
+
+\begin_layout Enumerate
+
+\lang english
+A resposta da pressão para o fluxo não-Darcyano na completação difere daquele
+ para fluxo não-Darcyano no reservatório em que o derivada de transição,
+ no último caso, é muito mais gradual para pequenos valores de CD.
+ Conforme o CD aumenta, a resposta da pressão para o fluxo não-Darcyano
+ no reservatório se aproxima da resposta de fluxo não-Darcyano através da
+ completação.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+Portanto, mesmo quando a qualidade dos dados proíbe uma estimativa única
+ do grau de comportamento não-Darcyano, muitas vezes pode ser possível identific
+ar a presença de comportamento não Darcyano a partir da forma da derivada
+ da pressão durante um teste buildup.
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Spivey2004"
+literal "false"
+
+\end_inset
+
 .
 \end_layout
 
